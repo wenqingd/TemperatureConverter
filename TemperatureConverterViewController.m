@@ -58,20 +58,23 @@
 }
 
 
-#pragma mark - private methods
 -(IBAction)onDoneButton
 {
     [self.view endEditing:YES];
-    if ([self.celsius.text length]==0) {
-        [self ftocConvert];
-    }
-    else if ([self.fahrenheit.text length]==0)
-    {
-        [self ctofConvert];
+    if (!([self.celsius.text length]==0 && [self.fahrenheit.text length]==0)){
+        if ([self.celsius.text length]==0)
+        {
+            [self ftocConvert];
+        }
+        else if ([self.fahrenheit.text length]==0)
+        {
+            [self ctofConvert];
+        }
     }
     
 }
 
+#pragma mark - private methods
 
 -(void)ctofConvert
 {
